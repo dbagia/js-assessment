@@ -27,11 +27,22 @@ exports.arraysAnswers = {
 
   removeWithoutCopy : function(arr, item) {
 
-     return arr.filter( function ( v ) {
+     var len = arr.length;
 
-      return v !== item;
+     for(var i = 0; i < len; i++ ) {
 
-    });
+        if(arr[i] === item) {
+
+          arr.splice(i, 1);
+
+          i--;
+          len = arr.length;
+
+        }
+
+     }
+
+     return arr;
 
   },
 
